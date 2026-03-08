@@ -2,19 +2,39 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone & Install
+
+```bash
+git clone https://github.com/piyushgaikwad0205/services-management.git
+cd services-management
+npm install
+```
+
+### 2. Configure Environment
+
+Create a `.env.local` file in the root:
+
+```env
+MONGODB_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/servbook?retryWrites=true&w=majority
+```
+
+### 3. Seed the Database
+
+```bash
+# Start the dev server first
+npm run dev
+
+# Then in another terminal or browser console:
+curl -X POST http://localhost:3000/api/seed
+```
+
+### 4. Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
